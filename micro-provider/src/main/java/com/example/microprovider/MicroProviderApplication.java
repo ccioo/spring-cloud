@@ -7,9 +7,9 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableHystrix
 @EnableFeignClients
+@EnableDiscoveryClient
 public class MicroProviderApplication {
 
 	public static void main(String[] args) {

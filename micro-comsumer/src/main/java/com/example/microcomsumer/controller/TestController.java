@@ -28,7 +28,7 @@ public class TestController {
 	
 	@RequestMapping("/accessProvider")
 	public String accessProvider(HttpServletRequest request) {
-		String result = rest.getForObject("http://provider-service/provider/test", String.class);
+		String result = rest.getForObject("http://provider/provider/test", String.class);
 		return result;
 	}
 	

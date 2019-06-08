@@ -1,4 +1,4 @@
-package com.example.microhystrixdashboard;
+package com.example.dashboard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

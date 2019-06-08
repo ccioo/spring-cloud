@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class UserContextInterceptor extends HandlerInterceptorAdapter {
-	    
-	private static final Logger log = LoggerFactory.getLogger(UserContextInterceptor.class);
-	
+
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse respone, Object arg2) throws Exception {
 		User user = getUser(request);

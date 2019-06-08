@@ -1,10 +1,9 @@
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
   instance:
-    prefer-ip-address: true
+        prefer-ip-address: true
 management:
   security:
     enabled: false
@@ -12,8 +11,3 @@ management:
     web:
       exposure:
         include: hystrix.stream
-spring:
-  application:
-    name: dashboard
-server:
-  port: 6666
