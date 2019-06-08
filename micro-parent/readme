@@ -1,0 +1,15 @@
+micro-eureka: 8761
+micro-comsumer: 5566
+micro-gateway: 9001
+micro-provider: 7777
+
+micro-common：权限校验模块
+
+
+
+
+
+
+
+
+

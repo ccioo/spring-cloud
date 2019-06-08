@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #不用配置路由信息就可以调用
+          lowerCaseServiceId: true
+      routes:
+            - id: client-service
+              uri: lb://CLIENT-SERVICE
+              predicates:
+              - Path= /client-service/**
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+security:
+  basic:
+    enabled: false
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
