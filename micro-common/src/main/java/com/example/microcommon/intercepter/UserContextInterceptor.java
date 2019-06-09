@@ -5,6 +5,10 @@ import com.example.microcommon.util.UserPermissionUtil;
 import com.example.microcommon.vo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -26,6 +30,9 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 			throw new PermissionException("无访问权限");
 		}
 		UserContextHolder.set(user);
+		ServletRequestAttributes servletRequestAttributes = new ServletRequestAttributes(request,respone);
+		servletRequestAttributes.setAttribute("user", user, 1);
+		RequestContextHolder.setRequestAttributes(servletRequestAttributes, false);
 		return true;
 	}
 
@@ -37,7 +44,7 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse respone, Object arg2, Exception arg3)
 			throws Exception {
-		UserContextHolder.shutdown();
+//		UserContextHolder.shutdown();
 	}
 	
 	private User getUser(HttpServletRequest request){

@@ -13,13 +13,12 @@ public class ProviderController {
 	
 	@GetMapping("/provider/test")
 	public String test(HttpServletRequest request) {
-		System.out.println("auth success, the user is : " + UserContextHolder.currentUser().getUserName());
-		System.out.println("----------------success access provider service----------------");
 		return "success access provider service!";
 	}
+
 	@GetMapping("/getDashboard")
 	public List<String> getProviderData(){
-		List<String> provider = new ArrayList<String>();
+		List<String> provider = new ArrayList<>();
 		provider.add("hystrix dashboard");
 		return provider;
 	}

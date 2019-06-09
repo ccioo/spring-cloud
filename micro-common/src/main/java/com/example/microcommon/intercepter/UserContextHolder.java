@@ -3,7 +3,7 @@ package com.example.microcommon.intercepter;
 import com.example.microcommon.vo.User;
 
 public class UserContextHolder {
-	public static ThreadLocal<User> context = new ThreadLocal<User>();
+	public static InheritableThreadLocal<User> context = new InheritableThreadLocal<>();
 	public static User currentUser() {
 		return context.get();
 	}
