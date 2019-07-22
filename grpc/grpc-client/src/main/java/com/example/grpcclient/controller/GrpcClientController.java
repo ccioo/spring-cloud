@@ -1,5 +1,6 @@
-package com.example.grpcclient;
+package com.example.grpcclient.controller;
 
+import com.example.grpcclient.service.GrpcClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

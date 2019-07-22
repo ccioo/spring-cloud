@@ -1,4 +1,4 @@
-package com.example.grpcclient;
+package com.example.grpcclient.config;
 
 import net.devh.springboot.autoconfigure.grpc.client.GlobalClientInterceptorConfigurerAdapter;
 import net.devh.springboot.autoconfigure.grpc.client.GlobalClientInterceptorRegistry;

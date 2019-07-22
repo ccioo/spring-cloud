@@ -1,4 +1,4 @@
-package com.example.grpcclient;
+package com.example.grpcclient.service;
 
 
 import com.example.grpc.lib.HelloReply;

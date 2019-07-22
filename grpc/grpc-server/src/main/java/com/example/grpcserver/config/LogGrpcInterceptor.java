@@ -1,4 +1,4 @@
-package com.example.grpcserver;
+package com.example.grpcserver.config;
 
 import io.grpc.Metadata;
 import io.grpc.ServerCall;

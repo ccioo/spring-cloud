@@ -1,4 +1,4 @@
-package com.example.grpcclient;
+package com.example.grpcclient.config;
 
 import io.grpc.*;
 import org.slf4j.Logger;
