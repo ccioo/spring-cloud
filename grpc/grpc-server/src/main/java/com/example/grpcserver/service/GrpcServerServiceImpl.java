@@ -10,7 +10,7 @@ import sun.java2d.pipe.SpanShapeRenderer;
 
 
 @GrpcService(SpanShapeRenderer.Simple.class)
-public class GrpcServerService extends SimpleGrpc.SimpleImplBase {
+public class GrpcServerServiceImpl extends SimpleGrpc.SimpleImplBase {
 
     @Override
     public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {

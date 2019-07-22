@@ -10,14 +10,17 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class GrpcClientService {
+public class RemoteCallService {
 
     @GrpcClient("cloud-grpc-server")
     private Channel serverChannel;
 
     public String sendMessage(String name) {
         SimpleGrpc.SimpleBlockingStub stub = SimpleGrpc.newBlockingStub(serverChannel);
-        HelloReply response = stub.sayHello(HelloRequest.newBuilder().setName(name).build());
+        HelloRequest helloRequest = HelloRequest.newBuilder().setName(name)
+                .build();
+        HelloReply response = stub.sayHello(helloRequest);
         return response.getMessage();
+
     }
 }
