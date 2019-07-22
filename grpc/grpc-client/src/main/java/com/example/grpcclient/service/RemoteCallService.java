@@ -6,6 +6,7 @@ import com.example.grpc.lib.HelloRequest;
 import com.example.grpc.lib.SimpleGrpc;
 import io.grpc.Channel;
 import net.devh.springboot.autoconfigure.grpc.client.GrpcClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 
 
