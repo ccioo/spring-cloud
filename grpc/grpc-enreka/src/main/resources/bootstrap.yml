@@ -19,7 +19,7 @@ eureka:
     serviceUrl:
             defaultZone: http://localhost:8761/eureka/
   server:
-    enable-self-preservation: false
+    enable-self-preservation: true
 
 endpoints:
  shutdown:
