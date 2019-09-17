@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringCloudApplication
-@SpringBootApplication(scanBasePackages = "com.example.**")
+@SpringBootApplication
+@EnableFeignClients
 public class MicroComsumerApplication {
 
 	public static void main(String[] args) {

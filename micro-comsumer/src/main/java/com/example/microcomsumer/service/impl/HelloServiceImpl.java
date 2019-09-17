@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class HelloService implements IHelloService {
+public class HelloServiceImpl implements IHelloService {
 
     @Autowired
     private ProviderService dataService;
