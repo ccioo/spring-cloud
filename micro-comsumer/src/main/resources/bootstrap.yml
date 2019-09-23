@@ -2,12 +2,7 @@ server:
   port: 5566
 spring:
   application:
-    name: client-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-        cluster-name: reader-cluster
+    name: consumer
 
 eureka:
   client:
@@ -38,3 +33,15 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 15000
+
+dubbo:
+  application:
+    name: demo-comsumer
+    qos-port: 22223
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    basePackages: com.example

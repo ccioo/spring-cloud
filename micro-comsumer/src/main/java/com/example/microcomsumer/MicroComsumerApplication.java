@@ -1,5 +1,6 @@
 package com.example.microcomsumer;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import com.example.microcommon.intercepter.RestTemplateUserContextInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,9 +12,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+@EnableDubbo
+@EnableFeignClients
 @SpringCloudApplication
 @SpringBootApplication
-@EnableFeignClients
 public class MicroComsumerApplication {
 
 	public static void main(String[] args) {

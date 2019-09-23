@@ -14,15 +14,22 @@
 	<description>Demo project for Spring Boot</description>
 	<packaging>pom</packaging>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.test.skip>true</maven.test.skip>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <spring-cloud-dubbo.version>1.0.0</spring-cloud-dubbo.version>
+    </properties>
+
 	<modules>
 		<module>../micro-gateway</module>
 		<module>../micro-comsumer</module>
 		<module>../micro-provider</module>
 		<module>../micro-hystrix-dashboard</module>
-	</modules>
+        <module>../micro-api</module>
+    </modules>
 
     <!--  利用传递依赖，公共部分  -->
     <dependencies>
@@ -41,6 +48,8 @@
             <scope>test</scope>
         </dependency>
 
+
+
     </dependencies>
     <!-- 管理依赖 -->
     <dependencyManagement>
@@ -58,6 +67,11 @@
                 <version>0.2.2.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.springcloud.dubbo</groupId>
+                <artifactId>spring-cloud-dubbo-starter</artifactId>
+                <version>${spring-cloud-dubbo.version}</version>
             </dependency>
         </dependencies>
 

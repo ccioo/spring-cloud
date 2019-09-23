@@ -17,6 +17,7 @@ public class RemoteCallService {
     private Channel serverChannel;
 
     public String sendMessage(String name) {
+        String authority = serverChannel.authority();
         SimpleGrpc.SimpleBlockingStub stub = SimpleGrpc.newBlockingStub(serverChannel);
         HelloRequest helloRequest = HelloRequest.newBuilder().setName(name)
                 .build();

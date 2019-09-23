@@ -20,15 +20,15 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse respone, Object arg2) throws Exception {
 		User user = getUser(request);
-		UserPermissionUtil.permission(user);
-		if(!UserPermissionUtil.verify(user,request)) {
-			respone.setHeader("Content-Type", "application/json");
-			String jsonstr = JSON.toJSONString("无访问权限");
-			respone.getWriter().write(jsonstr);
-			respone.getWriter().flush();
-			respone.getWriter().close();
-			throw new PermissionException("无访问权限");
-		}
+//		UserPermissionUtil.permission(user);
+//		if(!UserPermissionUtil.verify(user,request)) {
+//			respone.setHeader("Content-Type", "application/json");
+//			String jsonstr = JSON.toJSONString("无访问权限");
+//			respone.getWriter().write(jsonstr);
+//			respone.getWriter().flush();
+//			respone.getWriter().close();
+//			throw new PermissionException("无访问权限");
+//		}
 		UserContextHolder.set(user);
 		ServletRequestAttributes servletRequestAttributes = new ServletRequestAttributes(request,respone);
 		servletRequestAttributes.setAttribute("user", user, 1);

@@ -1,10 +1,6 @@
 spring:
   application:
     name: provider
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
 eureka:
   client:
     serviceUrl:
@@ -23,3 +19,14 @@ management:
         include: hystrix.stream
 server:
   port: 7777
+
+dubbo:
+  application:
+    name: demo-provider
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    basePackages: com.example
