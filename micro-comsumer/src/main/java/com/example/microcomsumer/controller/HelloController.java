@@ -1,7 +1,6 @@
 package com.example.microcomsumer.controller;
 
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.example.api.DubboService;
 import com.example.microcomsumer.service.IHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +22,6 @@ public class HelloController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Reference
-    private DubboService dubboService;
-
-
     /**
      * feign 远程调用
      */
@@ -40,13 +35,13 @@ public class HelloController {
      *
      * @return
      */
-    @GetMapping("/testDubbo")
-    public Object testDubbo() {
-        String testAccess = null;
-        testAccess = dubboService.testAccess();
-        System.out.println(testAccess);
-        return testAccess;
-    }
+//    @GetMapping("/testDubbo")
+//    public Object testDubbo() {
+//        String testAccess = null;
+//        testAccess = dubboService.testAccess();
+//        System.out.println(testAccess);
+//        return testAccess;
+//    }
 
 
     /**

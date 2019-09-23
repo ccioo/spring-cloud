@@ -10,5 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient("provider")
 public interface DubboService {
 
+   @GetMapping(value = "/testAccess")
     String testAccess();
 }

@@ -12,9 +12,11 @@
         <module name="micro-eureka" />
         <module name="micro-hystrix-dashboard" />
         <module name="micro-gateway" />
+        <module name="micro-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="micro-api" target="1.8" />
       <module name="micro-auth" target="1.8" />
       <module name="micro-common" target="1.8" />
       <module name="micro-comsumer" target="1.8" />
@@ -27,6 +29,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="micro-api" options="-parameters" />
       <module name="micro-common" options="-parameters" />
       <module name="micro-comsumer" options="-parameters" />
       <module name="micro-eureka" options="-parameters" />
